@@ -42,35 +42,44 @@ div#container	{
 
 	function displayEmailName() {
 		
-		var atSymbol = 0;		//local variable that will store the location of the @ symbol
-		var emailNameOnly = "";	//local variable that will store the value of the name portion of the email address
+		let atSymbol = 0;		//local variable that will store the location of the @ symbol
+
+		let emailNameOnly = "";	//local variable that will store the value of the name portion of the email address
 		
-		studentEmail.indexOf("@");	
+		 atSymbol =  studentEmail.indexOf("@");
+     
+     emailNameOnly = studentEmail.substr(0,atSymbol);
 		
-		//alert( "Email name: " + studentEmail.substr(?,atSymbol) );
+		alert( "Email name: " +  emailNameOnly );
+
     }
 
-
     // create a functiom displayEmail 
-
     let displayEmail = () => {
 
-        alert("My email");
+        alert("Student Email: " + studentEmail);
     }
 
     let  dislayemailServer = () => {
-        alert("Display email server");
+        
+       let index = studentEmail.indexOf("@") + 1;
+
+       let serverName = studentEmail.substr(index, studentEmail.length);
+     
+        alert("Display email server: "  + serverName);
     }
 
-    displayGreeting();   //  Run the function displayGreeting as a run time script;
+  displayGreeting();   //  Run the function displayGreeting as a run time script;
 
-    getStudentName() // run the function getStudentName as run time script.
+  getStudentName(); // run the function getStudentName as run time script.
 
-    getStudentEmail() // run the function getStudentEmail as run time script.
+  getStudentEmail(); // run the function getStudentEmail as run time script.
+
+  displayEmail();    // run the functiom displayEmail as run time script
 	
 	displayEmailName();
 
-    dislayemailServer() // run the functiom dislayemailServer as run time script.
+  dislayemailServer() // run the functiom dislayemailServer as run time script.
 
 </script>
 
@@ -104,7 +113,7 @@ div#container	{
   <p>7. Complete the displayEmailName( ). The function should display the name portion of the studentEmail variable. Do not include the @ symbol in the result. </p>
   <p>Modify the following button to call the displayEmailName( ) with a click event handler.</p>
   <p>
-    <input type="button" name="button2" id="button2" value="Display Email Name">
+    <input type="button" name="button2" id="button2" value="Display Email Name"  onClick="displayEmailName()">
   </p>
   <p>8. Write a function called displayEmailServer( ). The function will display that portion of the studentEmail that follows the @ symbol. Do not include the @ symbol in the result.</p>
   <p>9. Fix the  button element that will run the displayEmailServer( ) with a click event handler.</p>
