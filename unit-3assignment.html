@@ -71,6 +71,14 @@ div#container	{
 
    dislayemailServer() // run the functiom dislayemailServer as run time script.
 
+    // write the name and the email on the document .......
+  let printStudentInfo = () => {
+   
+    document.write( "<p>Student name:" + studentName + "</p>");
+    document.write("<p>Student email:" + studentEmail + "</p>");
+ 
+   }
+
 </script>
 
 
@@ -95,17 +103,9 @@ div#container	{
   
   
 <script>
-
-   // write the name and the email on the document .......
-  let printStudentInfo = () => {
-   
-   document.write( "<p>Student name:" + studentName + "</p>");
-	 document.write("<p>Student email:" + studentEmail + "</p>");
-
-  }
-   
-  printStudentInfo();
   
+    // Print the name and email address ,Each in their own paragraph.
+    printStudentInfo();
 </script> 
   
   <p>7. Complete the displayEmailName( ). The function should display the name portion of the studentEmail variable. Do not include the @ symbol in the result. </p>
