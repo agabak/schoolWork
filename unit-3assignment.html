@@ -59,6 +59,14 @@ div#container	{
         alert("Display email server: "  + serverName);
     }
 
+    let printStudentInfo = () => {
+
+       // assign the value to the htnl elements
+       studentName = document.getElementById(paraOne);
+
+       studentEmail =  document.getElementById(paraTwo);
+    }
+
    displayGreeting();   //  Run the function displayGreeting as a run time script;
 
    getStudentName(); // run the function getStudentName as run time script.
@@ -70,6 +78,8 @@ div#container	{
 	 displayEmailName();
 
    dislayemailServer() // run the functiom dislayemailServer as run time script.
+
+   printStudentInfo(); // run the functiom printStudentInfo as run time script;
 
 </script>
 
@@ -95,6 +105,7 @@ div#container	{
   <p>6. Complete the function called printStudentInfo( ). The function should write the studentName and studentEmail to the web page. Each in their own paragraph.  </p>
   
   <script>
+    
   	document.write("Student name:" studentName);
 	  document.write("Student email:" studentEmail);
   </script>
