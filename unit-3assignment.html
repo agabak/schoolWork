@@ -22,25 +22,16 @@ div#container	{
 	var studentEmail = "";	//global variable to be used later
 
 
-	function displayGreeting() {
-		
-		alert("Hello! Welcome to WDV221 Intro Javascript");
-			
-	}
-	
-	function getStudentName() {
-		studentName = prompt("Please enter your name");	
-	}
+	let displayGreeting  = ()  => { alert("Hello! Welcome to WDV221 Intro Javascript"); }  
 
+  let getStudentName =  () => { studentName = prompt("Please enter your name");	}
+	
     //  Create a function to assign studentEmail a value.
 
-    let getStudentEmail = () => {
-
-        studentEmail = prompt('Enter your DMACC email address.')
-    }
+    let getStudentEmail = () => { studentEmail = prompt('Enter your DMACC email address.'); }
 	
 
-	function displayEmailName() {
+	  let displayEmailName =  () => {
 		
 		let atSymbol = 0;		//local variable that will store the location of the @ symbol
 
@@ -55,10 +46,9 @@ div#container	{
     }
 
     // create a functiom displayEmail 
-    let displayEmail = () => {
 
-        alert("Student Email: " + studentEmail);
-    }
+    let displayEmail = () => {  alert("Student Email: " + studentEmail); }
+    
 
     let  dislayemailServer = () => {
         
@@ -69,17 +59,17 @@ div#container	{
         alert("Display email server: "  + serverName);
     }
 
-  displayGreeting();   //  Run the function displayGreeting as a run time script;
+   displayGreeting();   //  Run the function displayGreeting as a run time script;
 
-  getStudentName(); // run the function getStudentName as run time script.
+   getStudentName(); // run the function getStudentName as run time script.
 
-  getStudentEmail(); // run the function getStudentEmail as run time script.
+   getStudentEmail(); // run the function getStudentEmail as run time script.
 
-  displayEmail();    // run the functiom displayEmail as run time script
+   displayEmail();    // run the functiom displayEmail as run time script
 	
-	displayEmailName();
+	 displayEmailName();
 
-  dislayemailServer() // run the functiom dislayemailServer as run time script.
+   dislayemailServer() // run the functiom dislayemailServer as run time script.
 
 </script>
 
@@ -105,8 +95,8 @@ div#container	{
   <p>6. Complete the function called printStudentInfo( ). The function should write the studentName and studentEmail to the web page. Each in their own paragraph.  </p>
   
   <script>
-  	//document.write("Student name:" studentName);
-	//document.write("Student email:" studentEmail);
+  	document.write("Student name:" studentName);
+	  document.write("Student email:" studentEmail);
   </script>
   
   
