@@ -1,22 +1,12 @@
-const PORT_NUMBER = 3000;
+const PORT_NUMNER = 3000;
 const http = require('http');
 
-const server = http.createServer((req,res) => {
-    res.write(`
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Hello from Node Js</title>
-    </head>
-    <body>
-        <h1>Hello from node</h1>
-    </body>
-    </html>
-    `)
-    res.end();
-});
+const routes = require('./routes');
 
-server.listen(PORT_NUMBER, () => console.log('listen on port number: ' + PORT_NUMBER))
+const server = http.createServer(routes.handler) // this like delegate in c# passing a function as parameter
+
+console.log(routes.someText)
+
+server.listen(PORT_NUMNER, () => {
+   console.log('Node server started at port : ' + PORT_NUMNER);
+});
