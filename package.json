@@ -1,0 +1,23 @@
+{
+  "name": "schoolwork",
+  "version": "1.0.0",
+  "description": "working with javascrip and nodejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agabak/schoolWork.git"
+  },
+  "author": "Agaba Kabunga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agabak/schoolWork/issues"
+  },
+  "homepage": "https://github.com/agabak/schoolWork#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
