@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro JavaScript</title>
+</head>
+	
+	<script>
+	
+		function pageLoad(){
+			//call this function using the onload event handler.
+			console.log("the page has been loaded");
+
+			// Assign an onclick event using JavaScript to call clickButton
+
+			document.getElementById("callButton").onclick = function() { clickButton("JavaScript"); };
+
+			// Assign a click event with JavaScript using the addEventListener to call clickButton
+
+            document.querySelector("#callButton1").addEventListener( "click",function () { clickButton("eventListener"); } ); 
+		}
+	
+		
+		function clickButton(inValue){
+			console.log("The " + inValue + " button was clicked!");
+		}
+
+	</script>
+
+<body onload="pageLoad()">
+	<header>
+		<h1>WDV221 Intro JavaScript</h1>
+		<h2>UNIT-5 Event Handlers</h2>
+		<h3>Assignment 5-1 Using Event Handlers</h3>	
+	</header>
+
+	<main>
+		<p>Many of the instructions for this assignment are in HTML or JavaScript comments. The instructions will tell you what event(s) to use and how to assign them. You will need to view the page source to see them.</p>
+
+		<p>
+			<button onclick="clickButton('HTML')">HTML Event Handler - onclick</button>
+			<!-- 
+				Assign an html event handler to call clickButton()
+				Use "HTML" as the parameter for the function
+			-->
+		</p>
+
+		<p>
+			<button id="callButton">JavaScript event handler - onclick </button>
+		
+			<!--
+				Assign an onclick event using JavaScript to call clickButton()
+				Use "JavaScript" as the parameter for the function
+			-->
+		</p>
+
+		<p>
+			<button id="callButton1">JavaScript addEventListener - onclick</button>
+			<!--
+				Assign a click event with JavaScript using the addEventListener to call clickButton()
+				Use "eventListener" as the parameter for the function
+			-->	
+		</p>	
+	</main>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
