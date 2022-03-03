@@ -1,0 +1,163 @@
+<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Style Object-CSS Interactions In Class Exercises</title>
+<style type="text/css">
+
+     .style1 {color: #FF0000}
+
+     .image {
+       width: 200px;
+       height: 200px;
+     }
+
+</style>
+</head>
+<script>
+
+   let changeTexColorOnClick = () => {
+
+        var p = document.querySelector("#pOne");
+            p.style.color = "#FF0000"
+   }
+
+   let alignTextCenterOnMouseover = () => {
+
+    const h3 =  document.querySelector("h3");
+          h3.style.textAlign = "center"
+     
+   }
+
+   let alignTextLeftButton = () => {
+
+     const h3 =  document.querySelector("h3");
+         h3.style.textAlign = "left"
+   }
+
+   function changeTextFontToSans() {
+
+    document.querySelector("#pTwo").style.fontFamily = "Impact,Charcoal,sans-serif";
+  }
+
+  function changeTexFontBackToDefault() {
+
+    document.querySelector("#pTwo").style.fontFamily = "";
+  }
+
+  function changeWordSaleTo24() {
+
+    document.querySelector("#sale").style.fontSize ="24px"
+  }
+
+  function changeBackToDefault() {
+
+    document.querySelector("#sale").style.fontSize = ""
+
+  }
+
+  function hideImageOnClick() {
+
+    document.querySelector("#image").style.display = 'none';
+  }
+
+  function showImageOnClick() {
+    document.querySelector("#image").style.display = 'block';
+  }
+
+  function doubleImageSizeOnMouseOver() {
+
+    document.querySelector("#image").style.height = "200px";
+    document.querySelector("#image").style.width = "200px";
+  }
+
+
+  function resizeImageSizeOnClick() {
+
+    document.querySelector("#image").style.height = "100px";
+    document.querySelector("#image").style.width = "100px";
+  }
+
+  function addBorderToPar() {
+    document.querySelector("#pFour").style.border = "thick solid";
+  }
+
+  // on the page load function
+  function onpageLoad() {
+
+    document.querySelector("#pThree").addEventListener('mouseover', (event) => {
+       
+            event.target.style.backgroundColor = "yellow";
+    });
+
+    document.querySelector("#pFive").addEventListener('mouseover', (event) => {
+      
+             document.querySelector("#pFour").style.border = "";
+    });
+
+    document.querySelector("#pSix").addEventListener('mouseover', (event) => {
+       
+      event.target.style.backgroundColor = "green";
+    });
+
+    document.querySelector("#pSix").addEventListener('mouseleave', (event) => {
+       
+      event.target.style.backgroundColor = "";
+    });
+}
+
+</script>
+	
+<body onload="onpageLoad()">
+  <h1>WDV221 Intro Javascript</h1>
+  <h3>Style Object - CSS Interactions - In Class Exercises</h3>
+  <p>Please modify this page to create the following Dynamic HMTL effects. </p>
+  <p id="pOne" onclick="changeTexColorOnClick()">1. Click this paragraph to change the font color to red.</p>
+  <p  onmouseover="alignTextCenterOnMouseover()">2. Mousever this paragraph to center the H3 element containing &quot;CSS Interactions&quot;.</p>
+
+  <p>3. Click the button to left align the H3 element. </p>
+  <p>
+    <label>
+    <input type="submit" name="button" id="button" value="Submit"  onclick="alignTextLeftButton()" />
+    </label>
+  </p>
+
+  <p id ="pTwo"  onmouseover="changeTextFontToSans()" onclick="changeTexFontBackToDefault()">4. Mouseover this paragraph to change the font to a font of you choice. 5. Click on this paragraph to return the font to the default font.</p>
+
+  <p >6. Click on the button to make the word <span id ="sale">SALE</span> font size 24. </p>
+  <p>
+    <label>
+    <input type="submit" name="button2" id="button2" value="Submit" onclick="changeWordSaleTo24()" />
+    </label>
+  </p>
+  <p>7. Click on the button to return the word to its original size.</p>
+  <p>
+    <label>
+      <input type="submit" name="button3" id="button3" value="Submit" onclick="changeBackToDefault()" />
+    </label>
+  </p>
+  <p id="pThree">8. Use an eventhandler of your choice on this paragraph to make the paragraph background color yellow. </p>
+
+  <p  onclick="hideImageOnClick()">9. Use an onclick event to hide the Frog image shown below.</p>
+
+  <p>10. Use the following button to make the Frog image shown below reappear.</p>
+  <p>
+    <input type="submit" name="button4" id="button4" value="Submit"  onclick="showImageOnClick()"/>
+  </p>
+  <p>11. Mouseover the Frong image to make its height and width double its original size. </p>
+
+  <p><img src="imgs/frog.jpg" width="100" height="100"  alt="" id="image" 
+           onmouseover="doubleImageSizeOnMouseOver()"  onclick="resizeImageSizeOnClick()"/></p>
+
+  <p>12. Use a click event on the Frog image to make it return to original size. </p>
+
+  <p id="pFour" ondblclick="addBorderToPar()">13. Doubleclick on this paragraph to place a border around this paragraph.</p>
+
+  <p id="pFive">14. Use an event handler of your choice to remove the border from the previous paragraph. </p>
+
+  <p id="pSix">15. Mouseover this paragraph to turn its background color to green. When you mouseoff the paragraph return it to its normal color. </p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  </body>
+  </html>
+  
