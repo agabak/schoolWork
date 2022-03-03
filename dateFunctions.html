@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Variables and Data Types Assignment</title>
+
+<style>
+
+.highlightTitle	{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-style:italic;
+	font-size:14px;
+	text-decoration:underline;
+	color:#096;
+}
+</style>
+<script>
+ let formatMMDDYYYY = inDateValue => {
+     const month = inDateValue.getMonth();
+     const year  = inDateValue.getFullYear();
+     const  date = inDateValue.getDate();
+
+     return  month + "/" + date + "/"  + year;
+ }
+
+  let pageLoad =  function() {
+      document.querySelector("#date").innerHTML = "Result: " + formatMMDDYYYY(new Date('2010-10-11T00:00:00+05:30'))
+  }
+
+</script>
+</head>
+
+<body onload="pageLoad()">
+<h2>WDV221 Intro Javascript</h2>
+<h3>Unit-6-2 - Create a function called formatMMDDYYYY(inputDate)</h3>
+<hr />
+
+<p>1. The function will accept an input parameter that is a date object</p>
+<p>2. It will use the methods of the Date object to get the month, date and year from the input date object</p>
+<p>3. Use the + to concatenate the pieces together to format a string that will look something like "3/1/2021"</p>
+<p>4.return the string when the function is complete </p>
+
+<p id="date"></p>
+
+</body>
+</html>
