@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDV221 Intro Javascript - Skill Test</title>
+    <style>
+        #container {
+            width:70%;
+            margin-left:auto;
+            margin-right: auto;
+            background-color: antiquewhite;
+            padding:10px;
+        }
+    </style>
+
+    <script>
+
+        function buttonResponse(inButtonType) {
+            console.log( "Button Clicked: " + inButtonType );
+        }
+
+        function onPageLoad() {
+             
+             // Javascript click property
+             document.getElementById('buttonTwo').onclick =  () => {
+                 
+                buttonResponse('Javascript click property');
+             }
+             
+             //Apply an eventListener to this button
+             document.getElementById('buttonThree').addEventListener( "click",() => {
+
+                 buttonResponse('Apply an eventListener to this button');
+             } ); 
+        }
+
+    </script>
+
+</head>
+<body onload="onPageLoad()">
+    <div id="container">
+        <h1>WDV221 Intro Javascript</h1>
+        <h2>Skill Test - Event Handlers</h2>
+        <h3>Overview:</h3>
+        <p>
+            Event handlers 'listen' for user driven activity on a web page. When they 'hear' the specified
+            activity they activate or 'fire'. Developers use them to trigger activity and functionality 
+            on a web page. Event handlers most often call a JavaScript function to perform the activity. 
+        </p>
+        <p>
+            This type of development/programming is called 'Event Driven'.  If the user doesn't trigger the Event 
+            with their actions then it will not run. A lot of the functionality of a web page is event driven 
+            based upon the activity of the user and how they are interacting with the content of the web page. This
+            is part of the User Experience for the customer of the web page.
+        </p>
+        <p>
+            There are three ways to apply event handlers. You can apply event handlers using HTML and/or JavaScript.
+            Each of the methods have their own syntax, rules and expectations. Each method has its own advantages and
+            disadvantages.  Choosing which method to apply an event handlers can be impacted by a number of things.
+        </p>
+        <p>The methods of applying event handlers</p>
+        <ul>
+            <li>HTML event handler attributes</li>
+            <li>Using the event properties of a JavaScript object: object.onclick="" </li>
+            <li>Applying the addEventListener() to a JavaScript object</li>
+        </ul>
+        <h3>Your Assignment:</h3>
+        <ol>
+            <li>Apply the designated type of event handler for the following buttons</li>
+            <li>Use the click event for all buttons</li>
+            <li>All buttons will call the SAME buttonResponse()</li>
+            <li>Use a parameter to customize the message to identify which button was clicked</li>
+        </ol>
+        <p>
+            <button id="buttonOne" onclick="buttonResponse('HTML Event Handler')">HTML Event Handler</button>
+        </p>
+        <p>
+            <button id="buttonTwo">Javascript click property</button>
+        </p>
+        <p>
+            <button id="buttonThree">Apply an eventListener to this button</button>
+        </p>
+        <p>
+            Note: You may change the HTML as needed to complete your task.
+        </p>
+    </div>
+
+</body>
+</html>
