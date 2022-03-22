@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript</title>
+
+<style>
+
+div#container	{
+	width:960px;
+	margin:auto;
+	padding:10px;
+	background-color:white;	
+	border:thin solid black;
+}
+</style>
+<script>
+
+ let random_number = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+ }
+
+ // onload function- when all elements are loaded to the DOM
+ let on_page_load = () => {
+
+    document.getElementById('randomNumber').onclick = () =>  {
+
+        document.getElementById('displayRandoNumber').innerHTML = random_number(1,10)
+     }
+ }
+
+ // log to the console for testing
+  console.log(random_number(1,10))
+  
+</script>
+</head>
+<body onload="on_page_load()">
+<div id="container">
+
+    <h1>WDV221 Intro Javascript</h1>
+    <h2>7-1: Random Number Generator</h2>
+
+    <p>Tasks:</p>
+    <p>Use the Javascript Math object to create a random number generator.</p>
+    <button id="randomNumber">Generator Random number</button>
+    <section id="displayRandoNumber"></section>
+</div>
+</body>
+</html>
