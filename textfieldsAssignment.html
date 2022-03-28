@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript - Operators and Textfields Assignment</title>
+
+<style>
+
+body {background-color:#C99;
+}
+
+.highlightTitle	{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-style:italic;
+	font-size:14px;
+	text-decoration:underline;
+	color:#096;
+}
+
+
+</style>
+
+
+<script>
+	var count = 0;	
+
+  let get_first_number = () => {
+    const inNum1 =  document.getElementById('numi').value
+    document.getElementById("displayFirstNum").value  = inNum1;
+  }
+
+  let get_second_number = () => {
+    const inNum2 = document.getElementById('numtwo').value;
+    document.getElementById('displaySecNum').value = inNum2;
+  }
+
+  let multiply_two_number = () => {
+    let inNum2 = document.getElementById('numtwo').value;
+    let inNum1 =  document.getElementById('numi').value
+
+    if(!isNaN(inNum1) && !isNaN(inNum2)) { 
+      document.getElementById('displayMultiply').value = inNum2 * inNum1
+    }
+  }
+
+  let add_two_number = () =>  {
+    let inNum2 = document.getElementById('numtwo').value;
+    let inNum1 =  document.getElementById('numi').value
+
+    if(!isNaN(inNum1) && !isNaN(inNum2)) { 
+      document.getElementById('displayAdd').value = Number(inNum2)  +  Number(inNum1)
+    }
+  }
+
+  let increment_number = () => {
+    document.getElementById('increment').value  = count++;
+  }
+
+  let on_reset_values = () =>  {
+    document.getElementById('increment').value = '';
+    document.getElementById('numtwo').value = ''
+    count = 0;
+  }
+
+</script>
+
+
+</head>
+
+<body>
+<h2>WDV221 Intro Javascript</h2>
+<h3>Project 3 - Operators and Textfields - Assignment</h3>
+<hr />
+<p>Please complete the following exercises on this page. When complete post this page to your  server. Make a link in your WDV221 homework  page for this assignment. </p>
+<p>Include a comment in each script with the exercise number and a description of what the script is supposed to do.</p>
+<p>Using Blackboard submit this  Assignment.</p>
+<hr />
+<h3>Instructions</h3>
+<p>Use the form fields for the input values. For each of the following exercises create a function what will be activated by the button.  </p>
+<form name="form1" method="post" action="">
+  <p>Enter a number for value1:
+    <input type="text" name="num1" id="numi"/>
+  </p>
+  <p>Enter a number for value 2:
+    <input type="text" name="num2" id="numtwo"/>
+  </p>
+  <p>1.
+    <input type="button" name="first_button" id="first_button" value="Display value1" onclick="get_first_number()" />
+    Display the value you entered for value1:
+  <input type="text" id="displayFirstNum"/>
+  </p>
+  <p>2.
+    <input type="button" value="Display value2" name="second_button" value="second_button" onclick="get_second_number()"/>
+    Dislplay the value you entered for value2:
+  <input type="text" id="displaySecNum"/>
+  </p>
+  <p>3.
+    <input type="button" value="Multiply" name="third_button" value="third_button" onclick="multiply_two_number()" />
+    Display the value of value1 * value2:
+  <input type="text" id="displayMultiply"/>
+  </p>
+  <p>4.
+    <input type="button" value="Add" name="fourth_button" value="fourth_button" onclick="add_two_number()" />
+    Display the results of value1 + value2 in the following textfield.
+  <input type="text" id="displayAdd"/>
+  </p>
+  <p>5.
+    <input type="button" value="Increment count"  onclick="increment_number()" />
+    Use the increment operator to add 1 to count and display the new value of count.
+  <input type="text" id="increment"/>
+  </p>
+  <p>
+    <input type="reset" name="Reset" id="button" value="Reset" onclick="on_reset_values()">
+  </p>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>
