@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript</title>
+<script>
+  let compareNumbers = () => {
+
+    console.log('compare was colled');  // make sure the function is called on click
+    
+    let value_one = document.getElementById('value1').value;
+    console.log(value_one);  
+
+    let value_two = document.getElementById('value2').value;
+    console.log(value_two);
+
+    if(Number(value_one) === Number(value_two)) {
+
+      document.getElementById('myresult').innerHTML = 'Equal';
+
+    }else if (Number(value_one) > Number(value_two)) {
+
+      document.getElementById('myresult').innerHTML =  value_one;
+
+    } else if (Number(value_one) < Number(value_two)) {
+
+      document.getElementById('myresult').innerHTML =  value_two;
+
+    } else {
+      
+      // in case the user enter a word insteady of number
+      document.getElementById('myresult').innerHTML =  'Make sure both values are  numbers';
+    }
+
+
+  }
+  let on_reset_values = () =>  {
+    document.getElementById('myresult').innerHTML = '';
+    document.getElementById("formNumberFour").reset();
+  }
+</script>
+</head>
+
+<body>
+<h2>WDV221 Intro Javascript</h2>
+<h3>Comparisons and IF Statements - Compare Numbers Assignment </h3>
+<hr />
+<p>Please complete the following exercises on this page. When complete post this page to your  server. Make a link in your WDV221 homework  page for this assignment. </p>
+<p>Include a comment in each script with the exercise number and a description of what the script is supposed to do.</p>
+<p>Using Blackboard submit this  Assignment.</p>
+<hr />
+<form id="formNumberFour" name="form1" method="post" action="">
+  <p>Value 1: 
+    <input type="text" name="value1" id="value1" />
+  </p>
+  <p>Value 2: 
+    <input type="text" name="value2" id="value2" />
+  </p>
+  <p>Result: <span id="myresult"></span> </p>
+  <p>
+    <input type="button" value="Compare Numbers" onclick="compareNumbers()" />
+  </p>
+  <p>
+    <input type="button" name="Reset" id="button" value="Reset" onclick="on_reset_values()"/>
+  </p>
+</form>
+
+<p>Instructions:</p>
+<ol>
+  <li>Create a function called compareNumbers( ).</li>
+  <li>The function will compare two numbers entered in the form above. </li>
+  <li>The function should display the largest number or &quot;Equal&quot; if both values are the same.</li>
+  <li>The results will be displayed in a span element using the .innerHTML property.</li>
+  <li>Provide a reset function that will properly clear the form between attempts.</li>
+</ol>
+</body>
+</html>
+
