@@ -1,0 +1,126 @@
+<html>
+
+<head>
+
+    <title>WDV221 Intro Javascript</title>
+
+</head>
+
+<body>
+
+    <h1>WDV221 Intro Javascript</h1>
+    <h2>12-1: Create JS objects</h2>
+    <h3>How to create, access, modify and delete with Javascript objects</h3>
+    <script>
+     
+        let bookTitles = ["Beginning Javascript", "Logic with ES6", "Javascript Ojbects Made Easy"];
+
+        let bookPrices = [19.99, 29.49, 999.99];
+
+        let bookAuthor = ["Smith", "Johson-Parker", "Westin" ];
+
+        // Use the javascript parallel arrays to create three Javascript objects called book1, book2, book3
+         // For each object create a method called studentDiscountPrice( ). This method will display the book price discounted by 20%
+        let book1 = {
+            "title": bookTitles[0],
+            "price": bookPrices[0],
+            "author": bookAuthor[0],
+            studentDiscountPrice: function() {              
+                let priceDiscount = ((this.price * 20)/100).toFixed(2)  // this will round up to two decial place
+                return priceDiscount;
+            }
+        };
+
+        // Display the price discount for book1
+        console.log(book1.studentDiscountPrice())
+
+       let book2 =  {
+            "title": bookTitles[1],
+            "price": bookPrices[1],
+            "author": bookAuthor[1],
+            studentDiscountPrice: function() {
+                let priceDiscount = ((this.price * 20)/100).toFixed(2)
+                return priceDiscount;
+            }
+        };
+
+         // Display the price discount for book2
+         console.log(book2.studentDiscountPrice())
+
+        let book3 =  {
+            "title": bookTitles[2],
+            "price": bookPrices[2],
+            "author": bookAuthor[2],
+            studentDiscountPrice: function() {
+                let priceDiscount = ((this.price * 20)/100).toFixed(2)
+                return priceDiscount;
+            }
+        };
+    
+         // Display the price discount for book3
+         console.log(book3.studentDiscountPrice())
+
+         // Create a Javascript array called javascriptBooks.  Load the book objects into the array.
+         let  javascriptBooks  = [book1, book2, book3];
+        
+    </script>
+
+    <h1>Use the following parallel arrays to create a set of objects:</h1>
+    <p>1. Use the javascript parallel arrays to create three Javascript objects called book1, book2, book3.</p>
+    <p>2. For each object create a method called studentDiscountPrice( ). This method will display the book price discounted by 20%.</p>
+    <p>3. Display the contents of each book object on the web page.</p>
+     <h3>Book 1</h3>
+        <ul>
+            <script>
+
+                document.write("<li> Title: " + book1.title + "</li>")
+                document.write("<li> Author: " + book1.author + "</li>")
+                document.write("<li> Price: " + book1.price + "</li>")
+                document.write("<li> 20% Price Discounted: " + book1.studentDiscountPrice() + "</li>")
+
+            </script>
+     </ul>
+
+     <h3>Book 2</h3>
+        <ul>
+            <script>
+                
+                document.write("<li> Title: " + book2.title + "</li>")
+                document.write("<li> Author: " + book2.author + "</li>")
+                document.write("<li> Price: " + book2.price + "</li>")
+                document.write("<li> 20% Price Discounted: " + book2.studentDiscountPrice() + "</li>")
+            
+            </script>
+     </ul>
+
+     <h3>Book 3</h3>
+     <ul>
+         <script>
+
+             document.write("<li> Title: " + book3.title + "</li>")
+             document.write("<li> Author: " + book3.author + "</li>")
+             document.write("<li> Price: " + book3.price + "</li>")
+             document.write("<li> 20% Price Discounted: " + book3.studentDiscountPrice() + "</li>")
+         
+         </script>
+  </ul>
+
+
+    <p>4. Create a Javascript array called javascriptBooks.  Load the book objects into the array. </p>
+    <p>5. Use a loop to process the contents of the javascriptBooks array. Display all the information for each book to the web page.</p>
+
+     <h1>All the content of the javascriptBooks on the web page</h1>
+     <ul>
+        <script>
+            for(let i = 0; i< javascriptBooks.length; i++) {
+                document.write("Book " + ( i + 1))
+                document.write(".................................................")
+                document.write("<li> Title: " + javascriptBooks[i].title +  "</li>")
+                document.write("<li> Author: " + javascriptBooks[i].author +  "</li>")
+                document.write("<li> Price: " + javascriptBooks[i].price +  "</li>")
+                document.write("<li> 20% Price Discounted: " + javascriptBooks[i].studentDiscountPrice() +  "</li>")
+            }
+        </script>
+     </ul> 
+</body>
+</html>
