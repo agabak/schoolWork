@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // Create a function called salesDiscount that will accept the sale price and the discount rate. 
+        //It will return the discounted sales price.
+        //assumption: discount can be a string containing %
+        //assumption: return discounted sales price should be numeric, not formatted string
+
+        function salesDiscount(inPrice,inDiscount){
+            //return inPrice;
+            //return parseFloat(inDiscount)/100;
+            //return inPrice - (inPrice*inDiscount);
+
+            //inDiscount is a string then parse/100 else use it
+
+            if(typeof inPrice == 'string'){ //price must be a number
+                return -1;
+            }
+
+            if(inPrice < 0){        //price must be 0 or greater
+                return -1;
+            }
+
+            if( typeof inDiscount == 'string'){
+                //if parseFloat returns a negative value return -1 else /100 to get a decimal
+                if(parseFloat(inDiscount) < 0 || isNaN(parseFloat(inDiscount)) ){
+                    return -1
+                }
+                else{
+                    discount = parseFloat(inDiscount)/100;
+  
+                }
+            }
+            else{
+                discount = inDiscount;
+            }
+
+            return inPrice - (inPrice * discount);
+        }
+
+        //Test Cases
+
+//Input 1 (price)				Input 2 (sale discount)			Expected Result
+//10.00							10%							9.00   passed
+//10.00							.10							9.00   passed
+//0								20%							0      passed
+//10.00							0							10.00  passed
+//-1								10%							error  passedS
+//a								10%							error      passeds
+//10								-10%						error  passed
+//10.00							a							error      passed
+//8.55							5%							8.1225?   s/b 8.12   passed
+//8.55							2.5%						8.33625		s/d 8.34  passed
+//8.55							.025						8.33625?	s/b 8.34  passed
+//8.55							0.5%						8.50725		s/b 8.51  passed						
+//	Added to process sales discount as a string with a % character
+//10.00							%							error        passed
+//10.00							%5							error		 passed				
+//10.00							5%3							error		 passed					
+//10.00							%53%						error        passed
+//10.00							a%				S			error        passed
+//10.00							%a%							error        passed
+//10.00							4a%							error        passed
+//10.00							%4a%						error        passed
+        
+
+        //test cases
+       // console.log("parseFloat(a) " + parseFloat('a')); 
+       // console.log("first test: " +  salesDiscount() );
+       // console.log("10.00 10% " +  salesDiscount(10.00,'10%') );
+      //console.log("10.00 .10 " +  salesDiscount(10.00,.10) );
+       // console.log("0 20% " +  salesDiscount(0,'20%') );
+        //console.log("10.00 0 " +  salesDiscount(10.00,0) );
+        //console.log("-1 10% " +  salesDiscount(-1,'10%') );
+       // console.log("a 10% " +  salesDiscount('a','10%') ); 
+       // console.log("10.00 '-10%' " +  salesDiscount(10.00,'-10%') );
+        console.log("10.00 'a' " +  salesDiscount(10.00,'a') );
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
