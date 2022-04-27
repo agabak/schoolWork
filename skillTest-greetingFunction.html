@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WDV221 Intro Javascript</title>
+    <style>
+        #container	{
+            width:1028px;
+            margin:auto;
+            background-color:#3CF;	
+        }
+        .center {
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+        font-size: 25px;
+        }
+    </style>
+    <script type="text/javascript" src="js/dateFunctions.js"></script>
+    <script type="text/javascript" src="js/greeting.js"></script>
+</head>
+
+<script>
+       
+  on_load = () => {
+    
+    // loading   function
+    greeting();
+
+    document.getElementById("copyId").innerHTML = getCurrentYear();
+
+   document.getElementById("todayDate").innerHTML = ' ' + get_current_date();
+   document.getElementById("todayli").innerHTML = ' ' + get_current_date();
+
+   console.log(get_current_date())
+  }
+      
+  get_current_date = () => {
+     
+    const current_day_of_week = getCurrentDayOfWeek();
+    const current_date =  getCurrentDate();
+    const current_month = getCurrentMonthName();
+    const current_year = getCurrentYear();
+    return  current_day_of_week + ' ' +  current_month + ' '  +  current_date + ', ' + current_year;
+  }
+
+</script>
+
+<body onload="on_load()">
+
+<div id="container">
+
+	<header>
+    	<h1>WDV221 Intro Javascript</h1>
+    	<h2>Skill Test - Implement Functions</h2>
+    </header>
+    <main>
+        <div class="center"><spa id="greeting">
+
+        </spa></div>
+        
+        <h2 style="text-align: center;">Today is:<spa id="todayDate"></spa></h2>
+        
+        <h3>Instructions:</h3>
+            <ol>
+              <li>Implement the greeting( ) 
+                <ul>
+                  <li>Implement the greeting( ) function on this page using an external link to the provided file. </li>
+                  <li>Use an onload event handler on the body element to run the script as soon as the page is loaded.</li>
+                  <li>The output from the function should display in the div element with an id='greeting' class.</li>
+                </ul>
+              </li>
+              <li>Display today's date in the following format: <strong id="todayli"></strong>
+                <ul>
+                  <li>Use the date functions provided earlier this semester to help your format the output.</li>
+                  <li>Attach these as an external javascript file.</li>
+                </ul>
+              </li>
+              <li>Implement a Copyright statement on the page.
+                <ul>
+                  <li>Format a Copyright statement on this page using the appropriate symbol.</li>
+                  <li>Use Javascript to ensure that the year will always be the current year.</li>
+                </ul>
+              </li>
+            </ol>
+	</main>
+    
+    <footer>
+       <p style="text-align: center;">Copyright &copy; <span id="copyId"> </span></p>  
+    </footer>
+
+</div>
+
+</body>
+</html>
