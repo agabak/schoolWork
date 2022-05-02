@@ -13,13 +13,69 @@
 	
 	var references = ["Field and Stream","Home and Garden","Plant Life"];
 
+	// create indivual product object
+	const product1 = {
+		name: products[0],
+		number: productNumber[0]
+	}
+
+	const product2 = {
+		name: products[1],
+		number: productNumber[1]
+	}
+
+	const product3 = {
+		name: products[2],
+		number: productNumber[2]
+	}
+
+	// create a product list  object
+	const productList = [product1,product2, product3];
+
+	const on_page_load = () => {
+
+    let setSelect = document.getElementById("selectProduct") 
+
+for(let i = 0; i < productList.length; i++) {
+
+ setSelect.options[setSelect.options.length] = new Option(productList[i].name, productList[i].number);  // bind a array to the dropdown
+
+}
+
+// create a group radio button
+const myDivOne = document.getElementById("radioButton")
+
+for(let i = 0; i < selectionFactors.length; i++) {
+
+	const label = document.createElement('label');
+	const input = document.createElement('input');
+	    input.type = "radio";
+		input.value = selectionFactors[i]
+		input.name = "factor"
+		myDivOne.appendChild(input);
+        myDivOne.appendChild(label);
+       label.appendChild(document.createTextNode(selectionFactors[i]));
+}
+
+// create checkbox dynamic
+var myDiv = document.getElementById("mycheckBox");
+
+for (var i = 0; i < references.length; i++) {
+    var checkBox = document.createElement("input");
+    var label = document.createElement("label");
+    checkBox.type = "checkbox";
+    checkBox.value = references[i];
+    myDiv.appendChild(checkBox);
+    myDiv.appendChild(label);
+    label.appendChild(document.createTextNode(references[i]));
+   }
+}
+
 </script>
-
-
 
 </head>
 
-<body>
+<body onload="on_page_load()">
 <h1>WDV221 Intro Javascript</h1>
 <h2>Skill Test - Loops and Arrays</h2>
 <form name="form1" method="post" action="">
@@ -30,8 +86,10 @@
       <br>
       <br>
       2. Please choose the primary factor in why you purchased our product:<br>
+	   <div id="radioButton"></div>
       <br>
   	3. How did your hear about us? Please select all that apply:<br>
+	  <div id="mycheckBox"></div>
   	<input type="submit" name="button" id="button" value="Submit">
   	<input type="reset" name="button2" id="button2" value="Reset">
   	<br>
