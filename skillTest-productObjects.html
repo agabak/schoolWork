@@ -1,0 +1,123 @@
+<html>
+
+	<head>
+		<title>WDV221 Intro Javascript</title>
+		<script type="text/javascript" src="productArrays.js"></script>
+		<script>
+			/*			
+			Product objects have the following properties and methods
+				prod_name
+				prod_number
+				prod_manufacture_price
+				prod_suggestedRetailPrice( )	
+					this function will create the suggest retail price of the object
+					to calculate take manufacture_price times 1.67
+			*/
+
+			// create products object from the three  parallel
+            
+			const formatter = new Intl.NumberFormat('en-US', {
+		style: 'currency',
+		currency: 'USD',
+
+		// These options are needed to round to whole numbers if that's what you want.
+		//minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+		//maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+		});
+
+			const product1 =  {
+				prod_name: productNames[0],
+				prod_number: productNumbers[0],
+				prod_manufacture_price: productManPrices[0],
+				prod_suggestedRetailPrice: function () {
+					return this.prod_manufacture_price * 1.67;
+				}
+			}
+
+			const product2 = {
+				prod_name: productNames[1],
+				prod_number: productNumbers[1],
+				prod_manufacture_price: productManPrices[1],
+				prod_suggestedRetailPrice: function () {
+					return this.prod_manufacture_price * 1.67;
+				}
+			}
+
+			const product3 = {
+				prod_name: productNames[2],
+				prod_number: productNumbers[2],
+				prod_manufacture_price: productManPrices[2],
+				prod_suggestedRetailPrice: function () {
+					return this.prod_manufacture_price * 1.67;
+				}
+			}
+
+             // Initialize  product list array 
+			let productList = [product1,product2, product3];
+            
+			// log  the list to the console
+			console.log(productList);
+			
+			const on_load_page = () => {
+
+				 // bind the product count on the html
+				document.getElementById("totalCount").innerHTML = productList.length;
+			}
+			
+		</script>
+	
+	</head>
+	
+	<body onload="on_load_page()">
+		<h1>WDV221 Intro Javascript</h1>
+		<h2>Skill Test - Create and Display Javascript Objects</h2>
+		
+		<h3>Product Inventory List</h3>
+		<div>
+			<p>EXAMPLE OUTPUT</p>
+			<p>Number of Products in Product List: 1</p>
+			<p>
+				Product: Standard Keyboard</br>
+				Product Number: std-key<br>
+				Product Wholesale Price: $11.90</br>
+				Product Suggested Retail Price: $19.87</br>
+			</p>
+			<p>PROJECT OUTPUT</p>
+			<p>Number of Products in Product List ? Count :  <spa id="totalCount"></spa></p>
+	
+			<script>
+
+				for(let i = 0; i <= productList.length; i ++) {
+            
+				  document.write("<p>Product: "  + productList[i].prod_name + "<br/>" + 
+					                 "Product Number: " + productList[i].prod_number + "<br/>" + 
+					                 "Product Wholesale Price: " + formatter.format(productList[i].prod_manufacture_price) + "<br/>" +
+									 "Product Suggested Retail Price: " + formatter.format(productList[i].prod_suggestedRetailPrice()) + "<br/>" +
+					            "<p/>")
+				}
+			
+			  </script>
+		
+		</div>
+		<h3>Instructions</h3>
+		<ol>
+			<li>Attach the external script file as the source for your data</li>
+			<li>Using the data provided in the external script file create an array of objects called productList using the object format in the script</li>
+			<li>Use a loop to display the contents of the productList on the page beginning after the Example Output</li>
+			<li>All prices should be displayed as USD formatted currency</li>
+		</ol>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
